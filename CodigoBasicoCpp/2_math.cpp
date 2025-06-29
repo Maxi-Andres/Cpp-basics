@@ -20,7 +20,7 @@ int main() {
     //z = ceil(x);
     //z = floor(x);
 
-    std::cout << z;
+    std::cout << z << '\n';
 
     int a;
     int b;

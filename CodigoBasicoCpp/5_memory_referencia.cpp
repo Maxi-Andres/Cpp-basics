@@ -29,6 +29,30 @@ int main() {
 	std::cout << "X: " << x << '\n';
 	std::cout << "Y: " << y << '\n';
 
+    std::cout << "==============" << '\n';
+
+    int numbers[] = {1, 2, 3, 4};
+
+    // int *pNumbers = &numbers; // ❌ Error: &numbers tiene tipo int (*)[4], no se puede asignar a int*
+    int *pNumbers = numbers; // ✅ Esto funciona: el array decae a un puntero al primer elemento
+
+    int (*a)[4]; // Asi creo un puntero llamado a de 4 ints
+
+    std::cout << "numbers        = " << numbers << '\n';        // Dirección del primer elemento (&numbers[0])
+    std::cout << "*numbers       = " << *numbers << '\n';       // Valor del primer elemento (1)
+    std::cout << "numbers[2]     = " << numbers[2] << '\n';     // Valor del tercer elemento (3)
+    std::cout << "&numbers       = " << &numbers << '\n';       // Dirección del array completo (tipo int (*)[4])
+    std::cout << "&numbers[0]    = " << &numbers[0] << '\n';    // Dirección del primer elemento (igual que numbers)
+
+    std::cout << '\n';
+
+    std::cout << "pNumbers       = " << pNumbers << '\n';       // Dirección del primer elemento (igual que numbers)
+    std::cout << "*pNumbers      = " << *pNumbers << '\n';      // Valor del primer elemento (1)
+    std::cout << "&pNumbers      = " << &pNumbers << '\n';      // Dirección del puntero pNumbers
+
+    std::cout << '\n';
+
+
     getchar();
     return 0;
 }
