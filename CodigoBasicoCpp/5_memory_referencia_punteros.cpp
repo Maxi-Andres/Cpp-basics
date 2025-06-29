@@ -36,7 +36,7 @@ int main() {
     // int *pNumbers = &numbers; // ❌ Error: &numbers tiene tipo int (*)[4], no se puede asignar a int*
     int *pNumbers = numbers; // ✅ Esto funciona: el array decae a un puntero al primer elemento
 
-    int (*a)[4]; // Asi creo un puntero llamado a de 4 ints
+    int (*punterovich)[4]; // Asi creo un puntero llamado punterovich de 4 ints
 
     std::cout << "numbers        = " << numbers << '\n';        // Dirección del primer elemento (&numbers[0])
     std::cout << "*numbers       = " << *numbers << '\n';       // Valor del primer elemento (1)
@@ -52,6 +52,27 @@ int main() {
 
     std::cout << '\n';
 
+// Null value = un valor especial que significa que algo no tiene valor.
+//              Cuando un puntero contiene un valor nulo, 
+//              ese puntero no apunta a ningún lugar (puntero nulo).
+
+//! nullptr = palabra clave que representa un literal de puntero nulo.
+
+// nullptrs son útiles para determinar si una dirección fue asignada exitosamente a un puntero.
+// si creas un puntero y no apunta a nada todavia, conviene que apunte a nullptr
+
+    int *pointer = nullptr;
+    int x1 = 123;
+
+    pointer = &x1;
+
+    if(pointer == nullptr){
+        std::cout << "address was not assigned!\n";
+    }
+    else{
+        std::cout << "address was assigned!\n";
+        std::cout << *pointer;
+    }
 
     getchar();
     return 0;
